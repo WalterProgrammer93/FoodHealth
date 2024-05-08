@@ -1,5 +1,4 @@
-import tensorflow as tf
-from tensorflow.python import tf2 as _tf2
+import tensorflow as tf2
 import numpy as np
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.models import Sequential
@@ -30,8 +29,8 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 model.fit_generator(train_generator, steps_per_epoch=len(train_generator), epochs=10)
 
 # Carga de la imagen del alimento a identificar
-image = tf.keras.preprocessing.image.load_img('./image.jpg', target_size=(224, 224))
-image = tf.keras.preprocessing.image.img_to_array(image)
+image = tf2.keras.preprocessing.image.load_img('./image.jpg', target_size=(224, 224))
+image = tf2.keras.preprocessing.image.img_to_array(image)
 image = np.expand_dims(image, axis=0)
 
 # Predicción de la categoría del alimento
@@ -40,5 +39,5 @@ predicted_class = np.argmax(prediction[0])
 print('Categoría del alimento:', train_generator.class_indices[predicted_class])
 
 # Obtención de información nutricional
-nutritional_info = tf.get_nutritional_info(predicted_class)
+nutritional_info = tf2.get_nutritional_info(predicted_class)
 print('Información nutricional:', nutritional_info)
