@@ -3,6 +3,7 @@ import numpy as np
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dense, Flatten
+from tensorflow.python._pywrap_tensorflow_internal import *
 
 # Carga del conjunto de datos de imágenes de alimentos
 train_datagen = ImageDataGenerator(rescale=1./255)
