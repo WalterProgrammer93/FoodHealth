@@ -5,12 +5,8 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "jdk",
-            "request": "launch",
-            "name": "Launch Java App"
-        },
-        {
             "name": "Python Debugger: Current File",
+            "type": "debugpy",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal"
